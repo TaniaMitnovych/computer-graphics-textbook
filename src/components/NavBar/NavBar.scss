@@ -1,0 +1,52 @@
+@import '../../vars.scss';
+
+.navbar {
+  height: 10%;
+  width: 100%;
+  background-color: $main-dark-blue-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__section-list {
+    display: flex;
+    list-style: none;
+    height: 70%;
+    align-items: center;
+    margin-right: 20px;
+    font-family: $main-font-family-montserrat;
+    font-weight: 600;
+  }
+
+  &__section-item {
+    height: 100%;
+    padding: 30px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &>a {
+      height: 100%;
+      text-decoration: none;
+      color: $main-orange-color;
+
+    }
+
+    &:hover {
+      background-color: $main-orange-color;
+      &>a{
+        color: $main-white-color; 
+      }
+    }
+
+  }
+  &__logo{
+    font-family: $font-family-logo-kaushan-script;
+    font-size: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+    &>a{
+      color: $main-orange-color;
+      text-decoration: none;
+    }
+  }
+}

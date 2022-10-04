@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.navbar {
+  height: 10%;
+  width: 100%;
+  background-color: #023047;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__section-list {
+  display: flex;
+  list-style: none;
+  height: 70%;
+  align-items: center;
+  margin-right: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.navbar__section-item {
+  height: 100%;
+  padding: 30px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.navbar__section-item > a {
+  height: 100%;
+  text-decoration: none;
+  color: #FB8500;
+}
+.navbar__section-item:hover {
+  background-color: #FB8500;
+}
+.navbar__section-item:hover > a {
+  color: #ffffff;
+}
+.navbar__logo {
+  font-family: "Kaushan Script", cursive;
+  font-size: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.navbar__logo > a {
+  color: #FB8500;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=NavBar.css.map */

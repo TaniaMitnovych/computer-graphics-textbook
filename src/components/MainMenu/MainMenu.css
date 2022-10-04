@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.main-menu__left-side {
+  background-color: #8ECAE6;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-menu__right-side {
+  background-color: #023047;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-menu__right-side > ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+.main-menu__right-side > ul > li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background-color: #FB8500;
+  border: none;
+  color: #ffffff;
+  border-radius: 20px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-menu__help-button {
+  width: 80%;
+  font-size: 26px;
+}
+
+.main-menu__section-button {
+  width: 80%;
+  height: 80%;
+  font-size: 28px;
+}
+
+.main-menu__logo {
+  font-family: "Kaushan Script", cursive;
+  font-size: 200px;
+}
+
+/*# sourceMappingURL=MainMenu.css.map */

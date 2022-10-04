@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import MainMenu from "./components/MainMenu/MainMenu";
+import NavBar from "./components/NavBar/NavBar";
+import React, {useEffect, useState} from 'react';
+import Fractals from "./components/Fractals/Fractals";
 function App() {
+  const [section,setSection]=useState(false);
+  const sections={
+    "fractal-section": <Fractals/>
+  }
+  function showSection(sectionID){
+    // let section=document.querySelector('#'+sectionID);
+    // section.style.display='flex';
+    setSection(sections[sectionID]);
+    console.log(sectionID);
+    console.log('shows')
+  }
+  useEffect(()=>{
+    let app=document.querySelector('.App');
+    app.addEventListener('setSection', (event)=>{
+      
+      console.log(event.target.dataset['value']);
+      showSection(event.target.dataset['value']);
+    })
+  },[]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainMenu/>
+      <NavBar/>
+      {(()=>{return section})()}
     </div>
   );
 }

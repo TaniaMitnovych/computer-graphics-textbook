@@ -1,0 +1,56 @@
+@import '../../vars.scss';
+
+.fractals{
+  display: flex;
+  height: 80vh;
+  padding-top: 10px;
+  &__manager{
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    height: 100%;
+    padding: 0 20px;
+    &>*{
+      margin-bottom: 20px;
+    }
+    &>h2{
+      text-align: center;
+      font-family: $main-font-family-montserrat;
+      font-size: 20px;
+      margin:0;
+    }
+  }
+  &__button{
+    margin-top: 5px;
+    height: 5%;
+  }
+  &__fractal-image{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:70%;
+    
+  }
+  
+}
+input[type="range"]{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  background: $main-dark-blue-color;
+  height: 0.3rem;
+  border-radius: 50px;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  background-color: $main-orange-color;
+  height: 1rem;
+  width:0.5rem;
+  margin-top:-0.25rem;
+  border-radius: 10px;
+  transition: 1s;
+}

@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.fractals {
+  display: flex;
+  height: 80vh;
+  padding-top: 10px;
+}
+.fractals__manager {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  padding: 0 20px;
+}
+.fractals__manager > * {
+  margin-bottom: 20px;
+}
+.fractals__manager > h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+.fractals__button {
+  margin-top: 5px;
+  height: 5%;
+}
+.fractals__fractal-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: #023047;
+  height: 0.3rem;
+  border-radius: 50px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #FB8500;
+  height: 1rem;
+  width: 0.5rem;
+  margin-top: -0.25rem;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+/*# sourceMappingURL=Fractals.css.map */

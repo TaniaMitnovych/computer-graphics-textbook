@@ -22,11 +22,10 @@
   margin-left: 15px;
   width: 70%;
   display: grid;
-  grid-template-columns: 1fr 3fr 0.5fr;
-  align-items: stretch;
+  grid-template-columns: 75px minmax(100px, 2fr) 40px;
 }
 .color-values > input {
-  margin: 0 5px 20px 5px;
+  margin: 0 5px 15px 5px;
 }
 
 .color-value {
@@ -35,7 +34,6 @@
 }
 
 .choosen-color {
-  background-color: #FB8500;
   vertical-align: middle;
   height: 80%;
   margin-right: 20px;

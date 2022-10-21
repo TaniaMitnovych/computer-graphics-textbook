@@ -1,0 +1,82 @@
+@import '../../vars.scss';
+
+.color-models {
+  display: flex;
+  font-family: $main-font-family-montserrat;
+
+  &__manager {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__lightness-range {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &>* {
+      margin: 5px;
+    }
+
+    &>input {
+      width: 45%;
+    }
+  }
+}
+
+.lightness-value {
+  width: 5px;
+}
+
+.color-models__image {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.color-models__image-picker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $main-font-family-montserrat;
+
+  &>input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+  }
+
+  &>label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $main-dark-blue-color;
+
+    &>img {
+      opacity: 0.5;
+      margin-bottom: 15px;
+    }
+  }
+
+}
+
+.color-model__img {
+  //width: 50vw;
+  //height: 80vh;
+  object-fit: contain;
+}

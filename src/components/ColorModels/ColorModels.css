@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+.color-models {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+}
+.color-models__manager {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.color-models__lightness-range {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.color-models__lightness-range > * {
+  margin: 5px;
+}
+.color-models__lightness-range > input {
+  width: 45%;
+}
+
+.lightness-value {
+  width: 5px;
+}
+
+.color-models__image {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-models__image-picker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+.color-models__image-picker > input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+}
+.color-models__image-picker > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #023047;
+}
+.color-models__image-picker > label > img {
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+.color-model__img {
+  object-fit: contain;
+}
+
+/*# sourceMappingURL=ColorModels.css.map */

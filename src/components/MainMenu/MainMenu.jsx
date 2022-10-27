@@ -31,7 +31,7 @@ const MainMenu = () => {
             <button className='main-menu__button main-menu__section-button button' data-value='fractal-section' type='button' onClick={(e)=>handleClick(e)}>Fractals</button>
           </li>
           <li className='main-menu__section-item'>
-            <button className='main-menu__button main-menu__section-button button' data-value='colors-section' type='button' onClick={(e)=>handleClick(e)}>Color schemes</button>
+            <button className='main-menu__button main-menu__section-button button' data-value='colors-section' id ="color-section-button" type='button' onClick={(e)=>handleClick(e)}>Color schemes</button>
           </li>
           <li className='main-menu__section-item'>
             <button className='main-menu__button main-menu__section-button button' data-value='movement-section' type='button' onClick={(e)=>handleClick(e)}>Object movement</button>

@@ -14,13 +14,17 @@ const ColorModels = () => {
   function insertImageIntoCanvas(e) {
     let imagePicker = document.querySelector(".color-models__image-picker");
     imagePicker.style.display = "none";
-    image = document.createElement('img');
+    //image = document.createElement('img');
+    image = new Image();
     image.src = URL.createObjectURL(e.target.files[0]);
 
     image.onload = () => {
       canvas.width = image.width;
       canvas.height = image.height;
       canvas.getContext('2d').drawImage(image, 0, 0);
+      console.log(image);
+      setChoosenImg(image);
+      console.log(choosenImg);
     }
     canvas.addEventListener('mousemove', function (e) {
       const bounding = canvas.getBoundingClientRect();
@@ -71,24 +75,47 @@ const ColorModels = () => {
 
 
   function changeLightnessOfRed() {
-    let data = canvas.getContext('2d')
-      .getImageData(0, 0, canvas.width, canvas.height);
-    let imgData = data.data;
-    for (let i = 0; i < imgData.length; i += 4) {
-      let hsl = rgbToHsl([imgData[i], imgData[i + 1], imgData[i + 2]]);
-      if (hsl[0] >= 355 || hsl[0] <= 10) {
-        hsl[2] = lightness;
-        let rgb = hslToRgb(hsl);
-        imgData[i] = rgb[0];
-        imgData[i + 1] = rgb[1];
-        imgData[i + 2] = rgb[2];
+    if(choosenImg !==null){
+      canvas.getContext('2d').drawImage(choosenImg,0, 0);
+      let data = canvas.getContext('2d')
+        .getImageData(0, 0, canvas.width, canvas.height);
+      let imgData = data.data;
+      for (let i = 0; i < imgData.length; i += 4) {
+        let hsl = rgbToHsl([imgData[i], imgData[i + 1], imgData[i + 2]]);
+        if (hsl[0] >= 355 || hsl[0] <= 10) {
+          hsl[2] = lightness;
+          let rgb = hslToRgb(hsl);
+          imgData[i] = rgb[0];
+          imgData[i + 1] = rgb[1];
+          imgData[i + 2] = rgb[2];
+        }
       }
+      canvas.getContext('2d').putImageData(data, 0, 0);
+    }else{
+      console.log("not def")
     }
-    canvas.getContext('2d').putImageData(data, 0, 0);
+    
   }
   useEffect(()=>{
     changeLightnessOfRed();
   },[lightness])
+
+  function clearCanvas(){
+    canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+    let imagePicker = document.querySelector(".color-models__image-picker");
+    imagePicker.style.display = "flex";
+  }
+  function saveImage() {
+    var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    downloadImage(image, "canvas.png")
+  }
+  function downloadImage(data, filename = 'untitled.png') {
+    var a = document.createElement('a');
+    a.href = data;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+  }
   return (
     <div className='color-models'>
       <div className='color-models__manager'>
@@ -101,6 +128,8 @@ const ColorModels = () => {
             onChange={(e) => { setLightness(e.target.value);  }} />
           <p className='lightness-value'>{lightness}</p>
         </div>
+        <button type="button" className='color-models__clear-button button' data-value='colors-section' onClick={clearCanvas}>Clear</button>
+        <button type="button" className='color-models__download-button button' onClick={saveImage}>Download</button>
 
       </div>
       <div className='color-models__image'>

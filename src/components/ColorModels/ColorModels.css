@@ -8,6 +8,13 @@
   width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+.color-models__manager > .button {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
 }
 .color-models__lightness-range {
   padding: 10px;
